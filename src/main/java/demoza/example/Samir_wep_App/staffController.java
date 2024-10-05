@@ -2,13 +2,16 @@ package demoza.example.Samir_wep_App;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.validation.Valid;
 
 
 
@@ -37,7 +40,10 @@ public class staffController {
 
 
     @PostMapping("/dataSubmitForm")
-    public String dataSubmitForm(staff staff){
+    public String dataSubmitForm(@Valid @ModelAttribute("addNewStaff") staff staff , BindingResult result ){
+            
+            if(result.hasErrors() ) return "addNewStaff" ;
+
             int index = getStaffIndex(staff.getId());
             if (index == Constants.not_found) {
                 AllStaff.add(staff);

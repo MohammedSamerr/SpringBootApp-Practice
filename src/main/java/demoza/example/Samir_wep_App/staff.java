@@ -2,8 +2,13 @@ package demoza.example.Samir_wep_App;
 
 import java.util.UUID;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class staff {
+    @NotBlank(message = "Staff Name can not be blank")
     private String staffName;
+
+    @NotBlank(message = "Staff Title can not be blank")
     private String staffTitle;
     private double staffSallary;
     private String id;

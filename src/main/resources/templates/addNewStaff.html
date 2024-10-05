@@ -17,10 +17,12 @@
     <div class="center-screen">
         <form method="post" th:object="${addNewStaff}" th:action="@{/dataSubmitForm}">
             <label for="StaffName">Staff Name</label><br>
+            <p th:errors="*{staffName}"></p>
             <input type="text" placeholder="Staff Name" th:field="*{staffName}">
             <br><br><br>
 
             <label for="StaffTitle">Staff Title</label><br>
+            <p th:errors="*{staffTitle}"></p>
             <input type="text" placeholder="Staff Title" th:field="*{staffTitle}">
             <br><br><br>
 

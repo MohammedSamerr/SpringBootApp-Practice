@@ -2,6 +2,7 @@ package demoza.example.Samir_wep_App.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import demoza.example.Samir_wep_App.Constants;
@@ -10,7 +11,7 @@ import demoza.example.Samir_wep_App.repository.staffRepository;
 
 @Service
 public class staffService {
-
+    @Autowired
     staffRepository staffRepository ;
 
     public staff getStaffByIndex (int index){

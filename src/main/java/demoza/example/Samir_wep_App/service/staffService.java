@@ -2,13 +2,16 @@ package demoza.example.Samir_wep_App.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import demoza.example.Samir_wep_App.Constants;
 import demoza.example.Samir_wep_App.staff;
 import demoza.example.Samir_wep_App.repository.staffRepository;
 
+@Service
 public class staffService {
 
-    staffRepository staffRepository = new staffRepository();
+    staffRepository staffRepository ;
 
     public staff getStaffByIndex (int index){
         return staffRepository.getStaffByIndex(index);
